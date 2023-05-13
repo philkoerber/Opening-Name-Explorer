@@ -11,6 +11,7 @@ const buttonStyles = {
 }
 
 function OpeningTree() {
+
   const game = useChessStore(state => state.game);
   const {setGameWithFen} = useChessStore()
   const setArrows = useChessStore(state => state.setArrows)
@@ -86,7 +87,8 @@ function OpeningTree() {
                   {...buttonStyles}
                   onClick={() => { handleGen1Click(continuation.move) }}
                   onHoverStart={() => { handleHover(continuation.move) }}
-                  onHoverEnd={()=>{ handleHover(null)}}
+                    onHoverEnd={() => { handleHover(null) }}
+                    onTouchStart={()=>{handleHover(null)}}
                 >
                   <h1 className='md:text-lg lg:text-xl text-accent w-full'>{continuation.move}</h1>
                   <h1 className='md:text-xl lg:text-2xl'>{continuation.positionName}</h1>
@@ -108,9 +110,8 @@ function OpeningTree() {
                       className={`${bgColor} rounded-full text-light2 cursor-pointer w-fit m-auto p-3 pt-1 -mt-2 border-2 border-dark0`}
                       {...buttonStyles}
                           onClick={() => { handleGen2Click(continuation.move, continuation2.move) }}
-                          
-                      onMouseEnter={() => { handleHover(continuation.move, continuation2.move) }}
-                      onMouseLeave={()=>{ handleHover(null)}}
+                      onHoverStart={() => { handleHover(continuation.move, continuation2.move) }}
+                      onHoverEnd={()=>{ handleHover(null)}}
                     >
                       <p className='md:text-sm lg:text-md text-accent w-full'>...{continuation2.move}</p>
                       <p className='md:text-sm lg:text-md'>{continuation2.positionName}</p>
