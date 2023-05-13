@@ -107,9 +107,10 @@ function OpeningTree() {
                         <motion.div
                       className={`${bgColor} rounded-full text-light2 cursor-pointer w-fit m-auto p-3 pt-1 -mt-2 border-2 border-dark0`}
                       {...buttonStyles}
-                      onClick={() => { handleGen2Click(continuation.move, continuation2.move) }}
-                      onHoverStart={() => { handleHover(continuation.move, continuation2.move) }}
-                      onHoverEnd={()=>{ handleHover(null)}}
+                          onClick={() => { handleGen2Click(continuation.move, continuation2.move) }}
+                          
+                      onMouseEnter={() => { handleHover(continuation.move, continuation2.move) }}
+                      onMouseLeave={()=>{ handleHover(null)}}
                     >
                       <p className='md:text-sm lg:text-md text-accent w-full'>...{continuation2.move}</p>
                       <p className='md:text-sm lg:text-md'>{continuation2.positionName}</p>
