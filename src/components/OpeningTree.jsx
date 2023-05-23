@@ -90,8 +90,8 @@ function OpeningTree() {
                     onHoverEnd={() => { handleHover(null) }}
                     onTouchStart={()=>{handleHover(null)}}
                 >
-                  <h1 className='md:text-lg lg:text-xl text-accent w-full'>{continuation.move}</h1>
-                  <h1 className='md:text-xl lg:text-2xl'>{continuation.positionName}</h1>
+                  <h1 className='text-md md:text-md lg:text-lg text-accent w-full'>{continuation.move}</h1>
+                  <h1 className='text-md md:text-lg lg:text-xl'>{continuation.positionName}</h1>
                   
                 </motion.div>
                 </motion.div>
@@ -113,8 +113,8 @@ function OpeningTree() {
                       onHoverStart={() => { handleHover(continuation.move, continuation2.move) }}
                       onHoverEnd={()=>{ handleHover(null)}}
                     >
-                      <p className='md:text-sm lg:text-md text-accent w-full'>...{continuation2.move}</p>
-                      <p className='md:text-sm lg:text-md'>{continuation2.positionName}</p>
+                          <p className='text-xs lg:text-md text-accent w-full'>{continuation.move} + {continuation2.move}</p>
+                      <p className='text-xs lg:text-md'>{continuation2.positionName}</p>
                     </motion.div>
                         </motion.div>
                     )
